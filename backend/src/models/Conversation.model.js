@@ -37,6 +37,9 @@ const lastMessageSchema = new mongoose.Schema(
             type: String,
             default: null
         },
+        imgUrl: {
+        type: String,
+    },
         senderId: {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'User'

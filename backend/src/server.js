@@ -5,7 +5,8 @@ import { authRoute } from './routes/authRoute.route.js';
 import { userRoute } from './routes/userRoute.route.js';
 import cookieParser from "cookie-parser";
 import { authorization } from "./middleware/user.middleware.js";
-import { friendRoute } from "./routes/friendRoute.route.js";    
+import { friendRoute } from "./routes/friendRoute.route.js";  
+import conversationRoute from "./routes/conversationRoute.route.js";  
 import cors from "cors";
 const app = express();
 dotenv.config();
@@ -24,6 +25,7 @@ app.use(authorization);
 //private route
 app.use("/api/user", userRoute);
 app.use("/api/friend", friendRoute);
+app.use("/api/conversation", conversationRoute);
 connect().then(
     app.listen(PORT, () => {
         console.log(`listen port ${PORT}`);
